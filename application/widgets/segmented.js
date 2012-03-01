@@ -691,17 +691,18 @@ SC.SegmentWidget = SC.ButtonWidget.extend({
       }
     }
 
+	var base = SC.theme.colors[SC.theme.base], highlight = SC.theme.colors[SC.theme.highlight];
     if ((disabled && !selected) || (disabled && !active && !selected)) {
       ctx.globalAlpha = 1.0;
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.fill();
 
       ctx.globalAlpha = 0.5;
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = font;
       ctx.textBaseline = "middle";
       ctx.textAlign = "center";
@@ -711,14 +712,14 @@ SC.SegmentWidget = SC.ButtonWidget.extend({
 
     } else if (disabled && selected) {
       ctx.globalAlpha = 0.5;
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.fill();
 
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
     
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.font = font;
       ctx.textBaseline = "middle";
       ctx.textAlign = "center";
@@ -727,13 +728,13 @@ SC.SegmentWidget = SC.ButtonWidget.extend({
       ctx.fillText(title, ctx.width/2, ctx.height/2);
 
     } else if (active || selected) {
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.fill();
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
     
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.font = font;
       ctx.textBaseline = "middle";
       ctx.textAlign = "center";
@@ -744,14 +745,14 @@ SC.SegmentWidget = SC.ButtonWidget.extend({
     } else {
       // console.log('rendering normally');
       ctx.globalAlpha = 1.0;
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.fill();
 
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = font;
       ctx.textBaseline = "middle";
       ctx.textAlign = "center";
