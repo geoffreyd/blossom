@@ -109,8 +109,7 @@ SC.View = SC.LeafSurface.extend({
   performRenderingIfNeeded: function(timestamp) {
     // console.log('SC.Surface#performRenderingIfNeeded()');
     var needsLayout = this.__needsLayout__,
-        needsDisplay = this.__needsRendering__,
-        isVisible = this.get('isVisible');
+        needsDisplay = this.__needsRendering__;
 
     var benchKey = 'SC.Surface#performRenderingIfNeeded()',
         displayKey = 'SC.Surface#performRenderingIfNeeded(): needsDisplay';
