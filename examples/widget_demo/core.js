@@ -5,7 +5,6 @@
 // ==========================================================================
 /*globals global WidgetDemo */
 
-SC.theme.highlight = 'blue';
 
 WidgetDemo = global.WidgetDemo = SC.Object.create({
 

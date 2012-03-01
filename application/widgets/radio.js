@@ -10,24 +10,6 @@ sc_require('mixins/control');
 
 if (BLOSSOM) {
 
-var base03 =   "#002b36";
-var base02 =   "#073642";
-var base01 =   "#586e75";
-var base00 =   "#657b83";
-var base0 =    "#839496";
-var base1 =    "#93a1a1";
-var base2 =    "#eee8d5";
-var base3 =    "#fdf6e3";
-var yellow =   "#b58900";
-var orange =   "#cb4b16";
-var red =      "#dc322f";
-var magenta =  "#d33682";
-var violet =   "#6c71c4";
-var blue =     "#268bd2";
-var cyan =     "#2aa198";
-var green =    "#859900";
-var white =    "white";
-
 /** @class
 
   A RadioWidget is used to create a group of radio buttons.  The user can use
@@ -415,17 +397,19 @@ SC.RadioButtonWidget = SC.ButtonWidget.extend({
     ctx.arc(8.75, 12, 6, 0, Math.PI*2);
     ctx.closePath();
 
+	var base = SC.theme.colors[this.get('themeBase') || SC.theme.base], 
+		highlight = SC.theme.colors[this.get('themeHighlight') || SC.theme.highlight];
     if ((disabled && !selected) || (disabled && !active && !selected)) {
       ctx.globalAlpha = 1.0;
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.fill();
 
       ctx.globalAlpha = 0.5;
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -435,14 +419,14 @@ SC.RadioButtonWidget = SC.ButtonWidget.extend({
 
     } else if (disabled) {
       ctx.globalAlpha = 0.5;
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.fill();
 
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
     
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -451,13 +435,13 @@ SC.RadioButtonWidget = SC.ButtonWidget.extend({
       ctx.fillText(title, 22, ctx.height/2);
 
     } else if (active) {
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.fill();
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
     
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -468,14 +452,14 @@ SC.RadioButtonWidget = SC.ButtonWidget.extend({
     } else {
       // console.log('rendering normally');
       ctx.globalAlpha = 1.0;
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.fill();
 
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -489,9 +473,9 @@ SC.RadioButtonWidget = SC.ButtonWidget.extend({
       ctx.beginPath();
       ctx.arc(8.75, 12, 3.5, 0, Math.PI*2);
       ctx.closePath();
-      ctx.fillStyle = (active || disabled)? base3 : base03;
+      ctx.fillStyle = (active || disabled)? base : highlight;
       ctx.fill();
-      ctx.strokeStyle = (active || disabled)? base3 : base03;
+      ctx.strokeStyle = (active || disabled)? base : highlight;
       ctx.lineCap = 'round';
       ctx.lineWidth = 0.5;
       ctx.stroke();

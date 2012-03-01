@@ -47,17 +47,19 @@ SC.CheckboxWidget = SC.ButtonWidget.extend({
 
     SC.CreateRoundRectPath(ctx, 1.5, 4.5, 15, 15, 5);
 
+	var base = SC.theme.colors[this.get('themeBase') || SC.theme.base], 
+		highlight = SC.theme.colors[this.get('themeHighlight') || SC.theme.highlight];
     if ((disabled && !selected) || (disabled && !active && !selected)) {
       ctx.globalAlpha = 1.0;
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.fill();
 
       ctx.globalAlpha = 0.5;
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -67,14 +69,14 @@ SC.CheckboxWidget = SC.ButtonWidget.extend({
 
     } else if (disabled) {
       ctx.globalAlpha = 0.5;
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.fill();
 
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
     
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -83,13 +85,13 @@ SC.CheckboxWidget = SC.ButtonWidget.extend({
       ctx.fillText(title, 22, ctx.height/2);
 
     } else if (active) {
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.fill();
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
     
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -100,14 +102,14 @@ SC.CheckboxWidget = SC.ButtonWidget.extend({
     } else {
       // console.log('rendering normally');
       ctx.globalAlpha = 1.0;
-      ctx.fillStyle = base3;
+      ctx.fillStyle = base;
       ctx.fill();
 
-      ctx.strokeStyle = base03;
+      ctx.strokeStyle = highlight;
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      ctx.fillStyle = base03;
+      ctx.fillStyle = highlight;
       ctx.font = "11pt Calibri";
       ctx.textBaseline = "middle";
       ctx.textAlign = "left";
@@ -127,9 +129,9 @@ SC.CheckboxWidget = SC.ButtonWidget.extend({
       ctx.lineTo(14, 9);
       ctx.lineTo(8.5, 17);
       ctx.closePath();
-      ctx.fillStyle = (active || disabled)? base3 : base03;
+      ctx.fillStyle = (active || disabled)? base : highlight;
       ctx.fill();
-      ctx.strokeStyle = (active || disabled)? base3 : base03;
+      ctx.strokeStyle = (active || disabled)? base : highlight;
       ctx.lineCap = 'round';
       ctx.lineWidth = 0.5;
       ctx.stroke();

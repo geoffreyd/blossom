@@ -73,6 +73,7 @@ behaviors.forEach(function(behavior, idx) {
     layout: { top: anchor, left: 210, width: 140, height: 24 },
     title: "Regular Button",
     theme: 'regular',
+	themeHighlight: 'green',
     buttonBehavior: buttonBehavior
   });
   layers.push(button);
@@ -82,6 +83,7 @@ behaviors.forEach(function(behavior, idx) {
     title: "Regular Button",
     theme: 'regular',
     isEnabled: false,
+	themeHighlight: 'green',
     buttonBehavior: buttonBehavior
   });
   layers.push(buttonD);
@@ -91,6 +93,7 @@ behaviors.forEach(function(behavior, idx) {
     title: "Regular Button",
     theme: 'regular',
     isSelected: true,
+	themeHighlight: 'green',
     buttonBehavior: buttonBehavior
   });
   layers.push(buttonS);
@@ -101,6 +104,7 @@ behaviors.forEach(function(behavior, idx) {
     theme: 'regular',
     isEnabled: false,
     isSelected: true,
+	themeHighlight: 'green',
     buttonBehavior: buttonBehavior
   });
   layers.push(buttonDS);
@@ -109,6 +113,7 @@ behaviors.forEach(function(behavior, idx) {
     layout: { top: anchor+30, left: 210, width: 140, height: 24 },
     title: "Square Button",
     theme: 'square',
+	themeHighlight: 'violet',
     buttonBehavior: buttonBehavior
   });
   layers.push(button2);
@@ -118,6 +123,7 @@ behaviors.forEach(function(behavior, idx) {
     title: "Square Button",
     theme: 'square',
     isEnabled: false,
+	themeHighlight: 'violet',
     buttonBehavior: buttonBehavior
   });
   layers.push(button2D);
@@ -127,6 +133,7 @@ behaviors.forEach(function(behavior, idx) {
     title: "Square Button",
     theme: 'square',
     isSelected: true,
+	themeHighlight: 'violet',
     buttonBehavior: buttonBehavior
   });
   layers.push(button2S);
@@ -137,6 +144,7 @@ behaviors.forEach(function(behavior, idx) {
     theme: 'square',
     isEnabled: false,
     isSelected: true,
+	themeHighlight: 'violet',
     buttonBehavior: buttonBehavior
   });
   layers.push(button2DS);
@@ -145,6 +153,7 @@ behaviors.forEach(function(behavior, idx) {
     layout: { top: anchor+60, left: 210, width: 140, height: 24 },
     title: "Capsule Button",
     theme: 'capsule',
+	themeHighlight: 'blue',
     buttonBehavior: buttonBehavior
   });
   layers.push(button3);
@@ -154,6 +163,7 @@ behaviors.forEach(function(behavior, idx) {
     title: "Capsule Button",
     theme: 'capsule',
     isEnabled: false,
+	themeHighlight: 'blue',
     buttonBehavior: buttonBehavior
   });
   layers.push(button3D);
@@ -163,6 +173,7 @@ behaviors.forEach(function(behavior, idx) {
     title: "Capsule Button",
     theme: 'capsule',
     isSelected: true,
+	themeHighlight: 'blue',
     buttonBehavior: buttonBehavior
   });
   layers.push(button3S);
@@ -173,6 +184,7 @@ behaviors.forEach(function(behavior, idx) {
     theme: 'capsule',
     isEnabled: false,
     isSelected: true,
+	themeHighlight: 'blue',
     buttonBehavior: buttonBehavior
   });
   layers.push(button3DS);

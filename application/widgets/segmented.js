@@ -691,7 +691,8 @@ SC.SegmentWidget = SC.ButtonWidget.extend({
       }
     }
 
-	var base = SC.theme.colors[SC.theme.base], highlight = SC.theme.colors[SC.theme.highlight];
+	var base = SC.theme.colors[this.get('themeBase') || SC.theme.base], 
+		highlight = SC.theme.colors[this.get('themeHighlight') || SC.theme.highlight];
     if ((disabled && !selected) || (disabled && !active && !selected)) {
       ctx.globalAlpha = 1.0;
       ctx.fillStyle = base;
