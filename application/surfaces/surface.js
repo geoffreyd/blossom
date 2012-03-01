@@ -489,7 +489,8 @@ SC.Surface = SC.Responder.extend({
         displayKey = 'SC.Surface#performRenderingIfNeeded(): needsDisplay';
 
     SC.Benchmark.start(benchKey);
-
+	if (SC.themeChanged) needsDisplay = true;
+	
     if (needsDisplay && isVisible) {
       SC.Benchmark.start(displayKey);
       if (this.get('isPresentInViewport')) {

@@ -166,9 +166,10 @@ SC.Application = SC.Responder.extend(SC.DelegateSupport,
 
     this.updatePsurfaces(surfaces);
 
-    if (SC.needsRendering) {
+    if (SC.needsRendering || SC.themeChanged) {
       uiContainer.performRenderingIfNeeded(timestamp);
       this.get('surfaces').invoke('performRenderingIfNeeded', timestamp);
+	  SC.themeChanged = false;
     }
 
     // Set these to false last, we don't want to accidently trigger another

@@ -71,7 +71,7 @@ SC.theme = {
     white:    "white"
   }
 };
-
+SC.themeChanged = false;
 
 SC.RequestAnimationFrame = function(callback) {
   // console.log('SC.RequestAnimationFrame()');
